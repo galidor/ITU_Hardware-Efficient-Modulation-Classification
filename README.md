@@ -56,7 +56,7 @@ In the final architecture, we remove the auxiliary classifiers to reduce the com
 After performing the initial training, we prune the neural network to save further computational and memory resources.
 We apply simple unstructured L1-norm-based pruning, where in each pruning step 15% of the weights with the smallest
 absolute values are removed from the network.
-After each pruning step, we perform 20 epochs of fine-tuning to regain accuracy.
+After each pruning step, we perform 20 epochs of fine-tuning to regain accuracy. To further increase the performance, we utilize cross-entropy loss and knowledge distillation loss, where we consider the original (unpruned) model as a teacher, and the pruned network as a student.
 
 ### Quantisation Level Reduction
 
